@@ -16,7 +16,8 @@
     --dark: #413525;        /* Deep brown text */
 
     /* Typography */
-    --font-serif: 'Playfair Display', 'Cormorant Garamond', serif;
+    --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --font-home-hero: 'Playfair Display', Georgia, serif;
     --font-sans: 'Montserrat', 'Inter', sans-serif;
 
     /* Radii */
@@ -5139,12 +5140,12 @@ h1, h2, h3, .font-serif {
     padding-left: 36px;
 }
 .luxury-retreat-page .oldrectory-hero-title {
-    font-family: var(--font-serif);
+    font-family: var(--font-home-hero);
     color: var(--white);
     font-size: 76px;
     line-height: 0.95;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.025em;
     margin: 0 0 22px;
 }
 .luxury-retreat-page .oldrectory-hero-sub {
@@ -5860,7 +5861,7 @@ h1, h2, h3, .font-serif {
 }
 /* ==========================================================================
    LUXURY RETREAT — HALLWAYS AND DINING SPACES
-   Four-image slideshow placed between Inside The Old Rectory and Step Outside.
+   Static four-image gallery placed between Inside The Old Rectory and Step Outside.
    Desktop layout keeps the image frame on the left and neutral wording on the right.
    ========================================================================== */
 .luxury-retreat-page .oldrectory-hallways-dining {
@@ -5894,6 +5895,10 @@ h1, h2, h3, .font-serif {
 
 .luxury-retreat-page .oldrectory-hallways-dining-gallery {
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 8px;
     width: 100%;
     aspect-ratio: 3 / 2;
     border-radius: 12px;
@@ -5902,26 +5907,15 @@ h1, h2, h3, .font-serif {
 }
 
 .luxury-retreat-page .oldrectory-hallways-dining-slide {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    inset: auto;
     width: 100%;
     height: 100%;
+    min-width: 0;
+    min-height: 0;
     object-fit: cover;
-    opacity: 0;
-    animation: hallwaysDiningOldRectoryFade 24s linear infinite;
-}
-
-.luxury-retreat-page .oldrectory-hallways-dining-slide:nth-child(1) { animation-delay: 0s; }
-.luxury-retreat-page .oldrectory-hallways-dining-slide:nth-child(2) { animation-delay: 6s; }
-.luxury-retreat-page .oldrectory-hallways-dining-slide:nth-child(3) { animation-delay: 12s; }
-.luxury-retreat-page .oldrectory-hallways-dining-slide:nth-child(4) { animation-delay: 18s; }
-
-@keyframes hallwaysDiningOldRectoryFade {
-    0%   { opacity: 0; }
-    2%   { opacity: 1; }
-    23%  { opacity: 1; }
-    25%  { opacity: 0; }
-    100% { opacity: 0; }
+    opacity: 1;
+    animation: none;
 }
 
 .luxury-retreat-page .oldrectory-hallways-dining-content {
@@ -5970,10 +5964,6 @@ h1, h2, h3, .font-serif {
 @media (prefers-reduced-motion: reduce) {
     .luxury-retreat-page .oldrectory-hallways-dining-slide {
         animation: none !important;
-        opacity: 0;
-    }
-
-    .luxury-retreat-page .oldrectory-hallways-dining-slide:first-child {
         opacity: 1;
     }
 }
@@ -8157,3 +8147,2441 @@ h1, h2, h3, .font-serif {
     }
 }
 
+
+
+/* ==========================================================================\n   CLIENT FEEDBACK CONSOLIDATION — JULY 2026\n   Final overrides for the approved palette, typography, spacing and layouts.\n   ========================================================================== */
+
+:root {
+    --olive: #5c6d51;
+    --forest: #173b30;
+    --cream: #f5f2ed;
+    --terracotta: #413525;
+    --beige: #dadfd7;
+    --grey: #949488;
+    --soft-sage: #b7c8b5;
+    --section-padding-desk: 68px 24px;
+    --section-padding-mob: 48px 20px;
+    --house-frame-width: 100%;
+    --house-frame-height: 680px;
+    --house-image-height: 320px;
+    --house-roof-height: 72px;
+}
+
+h1, h2, h3, .font-serif, .italic-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.015em;
+}
+
+/* Preserve the approved homepage hero typeface exactly while upgrading all other headings. */
+.home-page .hero-title {
+    font-family: var(--font-home-hero);
+    letter-spacing: -0.025em;
+}
+
+.section-padding { padding: 72px 0; }
+.container { max-width: 1240px; }
+
+/* Larger logo and tighter left edge on desktop/laptop. */
+@media (min-width: 1024px) {
+    .header-container { max-width: 1320px; padding-left: 16px; padding-right: 22px; }
+    .logo img { width: 150px; }
+    .header { padding: 16px 0; }
+    .nav-list { gap: 24px; }
+}
+
+/* Consistent high-contrast mobile navigation on every page. */
+@media (max-width: 768px) {
+    .header { background: rgba(23, 59, 48, 0.98); }
+    .nav-list,
+    .nav-list.active {
+        z-index: 1200;
+        background: #173b30 !important;
+        border-top: 1px solid rgba(255,255,255,.14);
+        box-shadow: 0 18px 36px rgba(0,0,0,.24);
+        max-height: calc(100vh - 76px);
+        overflow-y: auto;
+    }
+    .nav-list.active .nav-link,
+    .aboutus-page .nav-list.active .nav-link,
+    .meet-team-page .nav-list.active .nav-link,
+    .staywithus-page .nav-list.active .nav-link,
+    .news-page .nav-list.active .nav-link,
+    .contact-page .nav-list.active .nav-link,
+    .home4home-page .nav-list.active .nav-link,
+    .corporate-stays-page .nav-list.active .nav-link,
+    .luxury-retreat-page .nav-list.active .nav-link {
+        color: #ffffff !important;
+        min-height: 38px;
+    }
+    .nav-list.active .nav-link.active::after { background: #b7c8b5 !important; }
+    .nav-list.active .nav-dropdown {
+        position: static;
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        flex-direction: column;
+        gap: 4px;
+        width: min(100%, 360px);
+        padding: 8px;
+        margin-top: 5px;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.12);
+        box-shadow: none;
+    }
+    .nav-list.active .nav-dropdown-link {
+        color: #ffffff !important;
+        padding: 11px 14px;
+        text-align: center;
+    }
+    .hamburger span,
+    .staywithus-hamburger span { background: #ffffff !important; }
+    .section-padding { padding: 52px 0; }
+}
+
+/* Homepage: three service offerings now read as clearly distinct blocks. */
+.home-page .business-simple {
+    background: #173b30;
+    color: #ffffff;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+.home-page .business-simple .section-title,
+.home-page .business-simple .body-text,
+.home-page .business-simple__intro > p { color: #ffffff !important; }
+.home-page .business-simple .italic-serif { color: #b7c8b5 !important; }
+.home-page .business-simple__step { background: #f5f2ed; }
+.home-page .home-from-home {
+    background: #dadfd7;
+    border-top: 8px solid #b7c8b5;
+    border-bottom: 8px solid #b7c8b5;
+}
+.home-page .luxury-curated {
+    background: #413525;
+    color: #ffffff;
+    border-top: 8px solid #5c6d51;
+}
+.home-page .luxury-curated .luxury-title,
+.home-page .luxury-curated .luxury-text p,
+.home-page .luxury-curated .body-text { color: #ffffff !important; }
+.home-page .luxury-curated .luxury-line,
+.home-page .luxury-curated .luxury-divider { background-color: #b7c8b5 !important; }
+.home-page .trusted-logos,
+.home-page .guest-reviews { background: #f5f2ed; }
+.home-page .client-reviews { background: #dadfd7; }
+
+/* Shared house-frame geometry: Meet the Team and Stay With Us now match exactly. */
+.meet-team-page .team-card,
+.staywithus-page .staywithus-card-v2 {
+    width: var(--house-frame-width);
+    max-width: 340px;
+    min-height: var(--house-frame-height);
+    justify-self: center;
+}
+.meet-team-page .team-card-featured .team-card-inner,
+.meet-team-page .team-card-standard,
+.staywithus-page .staywithus-card-inner {
+    --team-roof-height: var(--house-roof-height);
+    --stay-card-roof-height: var(--house-roof-height);
+    min-height: var(--house-frame-height);
+    padding: 14px 14px 26px;
+}
+.meet-team-page .team-img,
+.staywithus-page .staywithus-card-img-wrap-v2 {
+    height: var(--house-image-height);
+}
+.staywithus-page .staywithus-card-img-wrap-v2 {
+    margin-bottom: 26px;
+    -webkit-clip-path: polygon(50% 0, 100% var(--house-roof-height), 100% 100%, 0 100%, 0 var(--house-roof-height));
+    clip-path: polygon(50% 0, 100% var(--house-roof-height), 100% 100%, 0 100%, 0 var(--house-roof-height));
+}
+.staywithus-page .staywithus-card-content-v2 { padding: 0 8px; }
+.staywithus-page .staywithus-cards-grid-v2 { align-items: stretch; }
+
+/* Carol appears first, followed by Kemton, in a centred two-card final row. */
+@media (min-width: 1025px) {
+    .meet-team-page .team-grid > .team-card-carol.team-card-bottom-left {
+        grid-column: 3 / span 2;
+    }
+    .meet-team-page .team-grid > .team-card-kemton.team-card-bottom-right {
+        grid-column: 5 / span 2;
+    }
+}
+@media (max-width: 1024px) {
+    .meet-team-page .team-grid > .team-card-carol.team-card-bottom-left,
+    .meet-team-page .team-grid > .team-card-kemton.team-card-bottom-right {
+        grid-column: auto;
+        width: 100%;
+    }
+}
+
+/* Stay With Us colour depth and card consistency. */
+.staywithus-page .staywithus-paths-v2 { background: #dadfd7; }
+.staywithus-page .staywithus-card-inner::before { background: #5c6d51; }
+.staywithus-page .staywithus-card-inner::after { background: #f5f2ed; }
+
+/* Corporate stays: green-led panels and a professional hero image treatment. */
+.corporate-stays-page .corp-hero { background: #dadfd7; }
+.corporate-stays-page .corp-guarantee { background: #f5f2ed; }
+.corporate-stays-page .corp-why { background: #b7c8b5; }
+.corporate-stays-page .corporate-contact { background: #173b30; }
+.corporate-stays-page .corporate-contact h2,
+.corporate-stays-page .corporate-contact p,
+.corporate-stays-page .corporate-contact label { color: #ffffff; }
+.corporate-stays-page .corp-hero-image img { object-fit: cover; object-position: center; }
+
+/* Home from Home: every requested image uses the same house-shaped frame. */
+.home4home-page .h4h-photo {
+    --h4h-roof: 72px;
+    border-radius: 0 !important;
+    overflow: hidden;
+    background: #5c6d51;
+    padding: 1px;
+    -webkit-clip-path: polygon(50% 0, 100% var(--h4h-roof), 100% 100%, 0 100%, 0 var(--h4h-roof));
+    clip-path: polygon(50% 0, 100% var(--h4h-roof), 100% 100%, 0 100%, 0 var(--h4h-roof));
+}
+.home4home-page .h4h-photo img,
+.home4home-page .h4h-photo-fallback {
+    border-radius: 0 !important;
+    -webkit-clip-path: polygon(50% 0, 100% var(--h4h-roof), 100% 100%, 0 100%, 0 var(--h4h-roof));
+    clip-path: polygon(50% 0, 100% var(--h4h-roof), 100% 100%, 0 100%, 0 var(--h4h-roof));
+}
+.home4home-page .h4h-intro { background: #dadfd7; }
+.home4home-page .h4h-reasons { background: #f5f2ed; }
+.home4home-page .h4h-bottom-cta {
+    padding: 56px 0;
+    background: #173b30;
+    color: #ffffff;
+}
+.home4home-page .h4h-bottom-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+}
+.home4home-page .h4h-bottom-cta h2 { color: #ffffff; font-size: clamp(34px,4vw,52px); line-height: 1; margin: 8px 0 14px; }
+.home4home-page .h4h-bottom-cta p { max-width: 650px; color: rgba(255,255,255,.86); }
+.home4home-page .h4h-bottom-cta-label { text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 700; color: #b7c8b5; }
+@media (max-width: 768px) {
+    .home4home-page .h4h-bottom-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* Old Rectory: uniform static image grids replace automatic crossfades. */
+.luxury-retreat-page .oldrectory-intro,
+.luxury-retreat-page .oldrectory-inside,
+.luxury-retreat-page .oldrectory-outside,
+.luxury-retreat-page .oldrectory-elevate { background: #f5f2ed; }
+.luxury-retreat-page .oldrectory-shepherd-huts { background: #dadfd7; padding: 64px 0; }
+.luxury-retreat-page .oldrectory-gallery,
+.luxury-retreat-page .oldrectory-inside-gallery,
+.luxury-retreat-page .oldrectory-outside-gallery,
+.luxury-retreat-page .oldrectory-shepherd-huts-gallery,
+.luxury-retreat-page .oldrectory-elevate-gallery {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    aspect-ratio: auto !important;
+    height: auto !important;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+}
+.luxury-retreat-page .oldrectory-gallery-slide,
+.luxury-retreat-page .oldrectory-inside-slide,
+.luxury-retreat-page .oldrectory-outside-slide,
+.luxury-retreat-page .oldrectory-shepherd-huts-slide,
+.luxury-retreat-page .oldrectory-elevate-slide {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover;
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    border-radius: 8px;
+}
+.luxury-retreat-page .oldrectory-step-outside--image-only { height: clamp(300px, 42vw, 480px); }
+.luxury-retreat-page .oldrectory-step-outside--image-only::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(23,59,48,.04), rgba(23,59,48,.18));
+    pointer-events: none;
+}
+.luxury-retreat-page .oldrectory-outside-content .oldrectory-paragraph { margin-bottom: 18px; line-height: 1.72; }
+
+/* Guest Experiences becomes supporting social proof: no imagery, landscape cards. */
+.luxury-retreat-page .oldrectory-reviews-support { padding: 68px 0; background: #b7c8b5; }
+.luxury-retreat-page .oldrectory-reviews-header { max-width: 720px; margin: 0 auto 32px; text-align: center; }
+.luxury-retreat-page .oldrectory-reviews-header .oldrectory-rule { margin-left: auto; margin-right: auto; }
+.luxury-retreat-page .oldrectory-reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+.luxury-retreat-page .oldrectory-review-card {
+    min-height: 250px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #f5f2ed;
+    border-top: 4px solid #5c6d51;
+    box-shadow: 0 14px 30px rgba(23,59,48,.10);
+}
+.luxury-retreat-page .oldrectory-review-card p { margin: 16px 0 22px; line-height: 1.7; }
+.luxury-retreat-page .oldrectory-review-stars { color: #413525; letter-spacing: 3px; }
+.luxury-retreat-page .oldrectory-review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid rgba(23, 59, 48, 0.14);
+}
+.luxury-retreat-page .oldrectory-review-avatar {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    box-shadow: 0 5px 14px rgba(23, 59, 48, 0.16);
+}
+.luxury-retreat-page .oldrectory-review-author-copy {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+.luxury-retreat-page .oldrectory-review-author-copy strong {
+    color: #173b30;
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 600;
+}
+.luxury-retreat-page .oldrectory-review-author-copy span {
+    margin-top: 3px;
+    color: #5c6d51;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.luxury-retreat-page .oldrectory-review-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+/* Revised final booking CTA. */
+.luxury-retreat-page .oldrectory-stay-cta__content { background: #dadfd7; }
+.luxury-retreat-page .oldrectory-stay-cta__content h2 { font-family: var(--font-serif); font-size: clamp(42px,5vw,64px); line-height: 1; margin: 14px 0; color: #173b30; }
+.luxury-retreat-page .oldrectory-stay-cta__intro { margin-bottom: 26px; }
+.luxury-retreat-page .oldrectory-booking-options { display: grid; gap: 22px; }
+.luxury-retreat-page .oldrectory-booking-option { padding-top: 18px; border-top: 1px solid rgba(23,59,48,.2); }
+.luxury-retreat-page .oldrectory-booking-option p { margin: 0 0 10px; font-weight: 600; }
+.luxury-retreat-page .oldrectory-airbnb-btn { background: #413525; color: #ffffff; }
+.luxury-retreat-page .oldrectory-airbnb-btn:hover { background: #173b30; transform: translateY(-2px); }
+
+@media (max-width: 900px) {
+    .luxury-retreat-page .oldrectory-reviews-grid { grid-template-columns: 1fr; }
+    .luxury-retreat-page .oldrectory-review-card { min-height: auto; }
+}
+@media (max-width: 600px) {
+    .luxury-retreat-page .oldrectory-gallery,
+    .luxury-retreat-page .oldrectory-inside-gallery,
+    .luxury-retreat-page .oldrectory-outside-gallery,
+    .luxury-retreat-page .oldrectory-shepherd-huts-gallery,
+    .luxury-retreat-page .oldrectory-elevate-gallery { grid-template-columns: 1fr; }
+    .luxury-retreat-page .oldrectory-gallery-slide,
+    .luxury-retreat-page .oldrectory-inside-slide,
+    .luxury-retreat-page .oldrectory-outside-slide,
+    .luxury-retreat-page .oldrectory-shepherd-huts-slide,
+    .luxury-retreat-page .oldrectory-elevate-slide { height: 240px !important; }
+}
+
+/* ==========================================================================
+   THE OLD RECTORY — CLIENT-APPROVED DARK LUXURY THEME
+   Scoped to .dark-luxury-theme so no other page is affected.
+   ========================================================================== */
+.luxury-retreat-page.dark-luxury-theme {
+    --cream: #0f1812;
+    --beige: #263329;
+    --soft-sage: #9da894;
+    --olive: #66755d;
+    --forest: #0a110d;
+    --terracotta: #b9894e;
+    --gold: #c89a5b;
+    --grey: #bcc4b8;
+    --light-border: rgba(205, 177, 126, 0.22);
+    --white: #f4f0e7;
+    --dark: #f4f0e7;
+
+    --luxury-bg: #0f1812;
+    --luxury-bg-deep: #0a110d;
+    --luxury-surface: #17231a;
+    --luxury-surface-alt: #1c2a20;
+    --luxury-border: rgba(205, 177, 126, 0.24);
+    --luxury-border-soft: rgba(244, 240, 231, 0.10);
+    --luxury-text: #f4f0e7;
+    --luxury-muted: #bcc4b8;
+    --luxury-gold: #c89a5b;
+    --luxury-sage: #66755d;
+
+    color: var(--luxury-text);
+    background:
+        radial-gradient(circle at 10% 0%, rgba(102, 117, 93, 0.10), transparent 34rem),
+        var(--luxury-bg);
+}
+
+.luxury-retreat-page.dark-luxury-theme main {
+    background: var(--luxury-bg);
+}
+
+.luxury-retreat-page.dark-luxury-theme ::selection {
+    color: var(--luxury-bg-deep);
+    background: var(--luxury-gold);
+}
+
+.luxury-retreat-page.dark-luxury-theme a:focus-visible,
+.luxury-retreat-page.dark-luxury-theme button:focus-visible {
+    outline: 2px solid var(--luxury-gold);
+    outline-offset: 4px;
+}
+
+/* Header and navigation */
+.luxury-retreat-page.dark-luxury-theme .header,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled-mobile {
+    background: linear-gradient(180deg, rgba(8, 14, 10, 0.88), rgba(8, 14, 10, 0.42) 68%, transparent);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.luxury-retreat-page.dark-luxury-theme .header.scrolled,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled-mobile {
+    background: rgba(10, 17, 13, 0.94);
+    border-bottom: 1px solid var(--luxury-border-soft);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.luxury-retreat-page.dark-luxury-theme .header .logo img,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled .logo img,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled-mobile .logo img {
+    filter: none;
+}
+
+.luxury-retreat-page.dark-luxury-theme .header .nav-link,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled .nav-link,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled-mobile .nav-link {
+    color: var(--luxury-text);
+}
+
+.luxury-retreat-page.dark-luxury-theme .header .nav-link.active::after {
+    height: 1px;
+    bottom: -7px;
+    background: var(--luxury-gold);
+}
+
+.luxury-retreat-page.dark-luxury-theme .header .hamburger span,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled .hamburger span,
+.luxury-retreat-page.dark-luxury-theme .header.scrolled-mobile .hamburger span {
+    background: var(--luxury-text);
+}
+
+.luxury-retreat-page.dark-luxury-theme .nav-dropdown {
+    background: rgba(15, 24, 18, 0.98);
+    border-color: var(--luxury-border);
+    border-radius: 2px;
+}
+
+.luxury-retreat-page.dark-luxury-theme .nav-dropdown-link {
+    color: var(--luxury-text);
+}
+
+.luxury-retreat-page.dark-luxury-theme .nav-dropdown-link:hover,
+.luxury-retreat-page.dark-luxury-theme .nav-dropdown-link:focus-visible {
+    color: var(--luxury-text);
+    background: var(--luxury-sage);
+}
+
+/* Buttons use the restrained sage and antique-gold treatment from the reference. */
+.luxury-retreat-page.dark-luxury-theme .btn {
+    border-radius: 2px;
+}
+
+.luxury-retreat-page.dark-luxury-theme .btn-olive,
+.luxury-retreat-page.dark-luxury-theme .desktop-enquire,
+.luxury-retreat-page.dark-luxury-theme .mobile-enquire {
+    color: var(--luxury-text);
+    background: var(--luxury-sage);
+    border: 1px solid rgba(244, 240, 231, 0.16);
+}
+
+.luxury-retreat-page.dark-luxury-theme .btn-olive.btn-pan-hover {
+    background: #43513e;
+}
+
+.luxury-retreat-page.dark-luxury-theme .btn-olive.btn-pan-hover::before {
+    background: var(--luxury-sage);
+}
+
+.luxury-retreat-page.dark-luxury-theme .btn-terracotta,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-airbnb-btn {
+    color: #fffaf1;
+    background: #a8783f;
+    border: 1px solid rgba(255, 250, 241, 0.18);
+}
+
+.luxury-retreat-page.dark-luxury-theme .btn-terracotta.btn-pan-hover {
+    background: #815a2f;
+}
+
+.luxury-retreat-page.dark-luxury-theme .btn-terracotta.btn-pan-hover::before {
+    background: #a8783f;
+}
+
+/* Hero */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero {
+    min-height: 680px;
+    height: min(78vh, 780px);
+    border-bottom: 1px solid var(--luxury-border-soft);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-bg {
+    filter: saturate(0.88) contrast(1.04) brightness(0.82);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-overlay {
+    background:
+        linear-gradient(90deg, rgba(5, 9, 7, 0.96) 0%, rgba(5, 9, 7, 0.78) 34%, rgba(5, 9, 7, 0.34) 68%, rgba(5, 9, 7, 0.20) 100%),
+        linear-gradient(0deg, rgba(10, 17, 13, 0.78) 0%, transparent 38%);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-content {
+    max-width: 700px;
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-title {
+    color: var(--luxury-text);
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.32);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-sub {
+    color: rgba(244, 240, 231, 0.88);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 10px 14px;
+    color: #fffaf1;
+    background: rgba(102, 117, 93, 0.84);
+    border: 1px solid rgba(244, 240, 231, 0.14);
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-location:hover {
+    background: rgba(118, 134, 106, 0.94);
+    transform: translateY(-1px);
+}
+
+/* Dark editorial sections */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-intro,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-inside,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate {
+    background: var(--luxury-bg);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hallways-dining,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-shepherd-huts,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-outside,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-reviews-support {
+    background: var(--luxury-surface);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-intro,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-inside,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hallways-dining,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-outside,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-shepherd-huts,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-reviews-support {
+    border-bottom: 1px solid var(--luxury-border-soft);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-heading,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-stay-cta__content h2,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-review-author-copy strong {
+    color: var(--luxury-text);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-paragraph,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-review-card p,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-stay-cta__intro,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-booking-option p {
+    color: var(--luxury-muted);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-eyebrow,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-shepherd-huts-kicker,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-review-stars,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-review-author-copy span {
+    color: var(--luxury-gold);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-rule {
+    background: linear-gradient(90deg, var(--luxury-gold), transparent);
+    opacity: 0.78;
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-rule::after {
+    background: var(--luxury-gold);
+}
+
+/* Image frames and gallery treatment */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-frame,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-intro-media .oldrectory-frame,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-inside-media .oldrectory-frame,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-outside-media .oldrectory-frame,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-shepherd-huts-media .oldrectory-frame,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-media .oldrectory-frame {
+    padding: 10px;
+    background: rgba(8, 14, 10, 0.54);
+    border: 1px solid var(--luxury-border);
+    border-radius: 2px;
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.20);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-frame::before,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-intro-media .oldrectory-frame::before,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-inside-media .oldrectory-frame::before,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-outside-media .oldrectory-frame::before,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-shepherd-huts-media .oldrectory-frame::before,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-media .oldrectory-frame::before {
+    inset: 5px;
+    border-color: rgba(244, 240, 231, 0.08);
+    border-radius: 1px;
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-frame::after,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-intro-media .oldrectory-frame::after,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-inside-media .oldrectory-frame::after,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-outside-media .oldrectory-frame::after,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-shepherd-huts-media .oldrectory-frame::after,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-media .oldrectory-frame::after {
+    inset: 5px;
+    opacity: 0.52;
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-gallery,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-inside-gallery,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hallways-dining-gallery,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-outside-gallery,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-shepherd-huts-gallery,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-gallery {
+    gap: 8px;
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-gallery-slide,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-inside-slide,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hallways-dining-slide,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-outside-slide,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-shepherd-huts-slide,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-slide {
+    border-radius: 1px;
+    box-shadow: inset 0 0 0 1px rgba(244, 240, 231, 0.06);
+}
+
+/* Keep the large outdoor image cinematic and tie it into the dark page. */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-step-outside--image-only {
+    border-top: 1px solid var(--luxury-border-soft);
+    border-bottom: 1px solid var(--luxury-border-soft);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-step-outside--image-only::after {
+    background:
+        linear-gradient(180deg, rgba(10, 17, 13, 0.24), rgba(10, 17, 13, 0.48)),
+        linear-gradient(90deg, rgba(10, 17, 13, 0.28), transparent 55%);
+}
+
+/* Elevate services become a fine-lined amenity strip. */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-services {
+    padding: 24px 0;
+    border-top: 1px solid var(--luxury-border);
+    border-bottom: 1px solid var(--luxury-border);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-service-icon,
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-service-label {
+    color: var(--luxury-text);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-elevate-service + .oldrectory-elevate-service::before {
+    background: var(--luxury-border-soft);
+}
+
+/* Guest review cards */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-review-card {
+    min-height: 270px;
+    background: linear-gradient(145deg, rgba(28, 42, 32, 0.96), rgba(18, 29, 22, 0.96));
+    border: 1px solid var(--luxury-border);
+    border-top: 1px solid var(--luxury-border);
+    border-radius: 2px;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-review-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(200, 154, 91, 0.48);
+    box-shadow: 0 24px 46px rgba(0, 0, 0, 0.25);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-review-author {
+    border-top-color: var(--luxury-border-soft);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-review-avatar {
+    border-color: var(--luxury-gold);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.26);
+}
+
+/* Final enquiry/booking area styled like the reference enquiry panel. */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-stay-cta {
+    background: var(--luxury-bg-deep);
+    border-top: 1px solid var(--luxury-border-soft);
+    border-bottom: 1px solid var(--luxury-border-soft);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-stay-cta__image::after {
+    background: linear-gradient(90deg, transparent 48%, rgba(10, 17, 13, 0.72) 100%);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-stay-cta__image img {
+    filter: saturate(0.90) brightness(0.78);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-stay-cta__content {
+    color: var(--luxury-text);
+    background:
+        linear-gradient(rgba(200, 154, 91, 0.035) 1px, transparent 1px),
+        var(--luxury-bg-deep);
+    background-size: 100% 38px;
+    border-left: 1px solid var(--luxury-border);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-booking-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-booking-option {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid var(--luxury-border);
+    background: rgba(23, 35, 26, 0.72);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-booking-option p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-booking-option .btn {
+    width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+/* Footer */
+.luxury-retreat-page.dark-luxury-theme .footer,
+.luxury-retreat-page.dark-luxury-theme .footer.bg-olive {
+    color: var(--luxury-text);
+    background: #09100c;
+    border-top: 1px solid var(--luxury-border);
+}
+
+.luxury-retreat-page.dark-luxury-theme .footer-grid,
+.luxury-retreat-page.dark-luxury-theme .footer-bottom {
+    border-color: var(--luxury-border-soft);
+}
+
+.luxury-retreat-page.dark-luxury-theme .footer-desc,
+.luxury-retreat-page.dark-luxury-theme .footer-links li,
+.luxury-retreat-page.dark-luxury-theme .footer-contact li,
+.luxury-retreat-page.dark-luxury-theme .footer-text,
+.luxury-retreat-page.dark-luxury-theme .footer-bottom {
+    color: rgba(244, 240, 231, 0.72);
+}
+
+.luxury-retreat-page.dark-luxury-theme .footer-heading,
+.luxury-retreat-page.dark-luxury-theme .social-links a {
+    color: var(--luxury-text);
+}
+
+.luxury-retreat-page.dark-luxury-theme .footer-links a:hover,
+.luxury-retreat-page.dark-luxury-theme .footer-legal a:hover,
+.luxury-retreat-page.dark-luxury-theme .social-links a:hover {
+    color: var(--luxury-gold);
+}
+
+@media (max-width: 900px) {
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-booking-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .luxury-retreat-page.dark-luxury-theme {
+        padding-top: 0;
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .header {
+        background: rgba(10, 17, 13, 0.92);
+        border-bottom: 1px solid var(--luxury-border-soft);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .nav-list {
+        background: rgba(10, 17, 13, 0.985);
+        border-top: 1px solid var(--luxury-border-soft);
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .nav-list .nav-link {
+        color: var(--luxury-text);
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .nav-dropdown {
+        background: rgba(244, 240, 231, 0.055);
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-hero {
+        min-height: 620px;
+        height: 78vh;
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-stay-cta__content {
+        border-left: 0;
+        border-top: 1px solid var(--luxury-border);
+    }
+}
+
+@media (max-width: 520px) {
+    .luxury-retreat-page.dark-luxury-theme {
+        padding-top: 0;
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-hero {
+        min-height: 570px;
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-hero-content {
+        padding-left: 0;
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-hero-location {
+        margin-top: 18px;
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-review-card,
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-booking-option {
+        padding: 22px;
+    }
+}
+
+/* ==========================================================================
+   Old Rectory hero image clarity refinement
+   Keeps the dark luxury direction while allowing the property photograph,
+   pool, architecture and surrounding details to remain clearly visible.
+   Scoped to this page only.
+   ========================================================================== */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-bg {
+    object-position: center 54%;
+    filter: saturate(1.05) contrast(1.08) brightness(0.98);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 9, 7, 0.76) 0%,
+            rgba(5, 9, 7, 0.58) 30%,
+            rgba(5, 9, 7, 0.25) 58%,
+            rgba(5, 9, 7, 0.08) 82%,
+            rgba(5, 9, 7, 0.03) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(10, 17, 13, 0.34) 0%,
+            rgba(10, 17, 13, 0.08) 35%,
+            transparent 58%
+        );
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-title {
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.58);
+}
+
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-sub {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.62);
+}
+
+@media (max-width: 768px) {
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-hero-bg {
+        object-position: 58% center;
+        filter: saturate(1.03) contrast(1.07) brightness(0.96);
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5, 9, 7, 0.76) 0%,
+                rgba(5, 9, 7, 0.54) 48%,
+                rgba(5, 9, 7, 0.19) 100%
+            ),
+            linear-gradient(
+                0deg,
+                rgba(10, 17, 13, 0.38) 0%,
+                transparent 55%
+            );
+    }
+}
+
+/* ========================================================================== 
+   OLD RECTORY — END IMAGE V1 RELIABILITY & HERO BLEND FIX
+   Keeps the existing design intact while ensuring the WebP hero appears on
+   the first page load, including on case-sensitive hosting such as GitHub.
+   ========================================================================== */
+.luxury-retreat-page .oldrectory-hero {
+    isolation: isolate;
+    background-color: #0a110d;
+}
+
+.luxury-retreat-page .oldrectory-hero-bg-wrapper {
+    z-index: 0;
+    overflow: hidden;
+    background-color: #0a110d;
+    background-image: url("assets/images/End%20Image%20V1.webp");
+    background-position: center 54%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.luxury-retreat-page .oldrectory-hero-bg {
+    position: relative;
+    z-index: 0;
+    display: block;
+    opacity: 1;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform;
+}
+
+.luxury-retreat-page .oldrectory-hero-overlay {
+    z-index: 1;
+    pointer-events: none;
+}
+
+.luxury-retreat-page .oldrectory-hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* A softer edge blend keeps the image visible while maintaining text contrast. */
+.luxury-retreat-page.dark-luxury-theme .oldrectory-hero-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 9, 7, 0.72) 0%,
+            rgba(5, 9, 7, 0.52) 30%,
+            rgba(5, 9, 7, 0.22) 58%,
+            rgba(5, 9, 7, 0.06) 82%,
+            rgba(5, 9, 7, 0.02) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(10, 17, 13, 0.30) 0%,
+            rgba(10, 17, 13, 0.06) 36%,
+            transparent 60%
+        );
+}
+
+@media (max-width: 768px) {
+    .luxury-retreat-page .oldrectory-hero-bg-wrapper {
+        background-position: 58% center;
+    }
+
+    .luxury-retreat-page.dark-luxury-theme .oldrectory-hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5, 9, 7, 0.72) 0%,
+                rgba(5, 9, 7, 0.50) 48%,
+                rgba(5, 9, 7, 0.16) 100%
+            ),
+            linear-gradient(
+                0deg,
+                rgba(10, 17, 13, 0.34) 0%,
+                transparent 58%
+            );
+    }
+}
+
+/* ========================================================================== 
+   HOMEPAGE PREMIUM TRUST-BUILDER REDESIGN — JULY 2026
+   Inspired by the approved homepage concept board. Scoped to the homepage so
+   internal pages keep their existing layouts and content.
+   ========================================================================== */
+.homepage-concept-v2 {
+    --home-ink: #173b30;
+    --home-deep: #10291f;
+    --home-cream: #f5f2ed;
+    --home-sage: #dadfd7;
+    --home-soft-sage: #b7c8b5;
+    --home-brown: #413525;
+    --home-muted: #68716a;
+    --home-line: rgba(23, 59, 48, 0.16);
+    --home-shadow: 0 20px 60px rgba(17, 42, 32, 0.12);
+    --font-serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+    --font-home-hero: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+    background: var(--home-cream);
+}
+
+.homepage-concept-v2 h1,
+.homepage-concept-v2 h2,
+.homepage-concept-v2 h3,
+.homepage-concept-v2 .font-serif,
+.homepage-concept-v2 .italic-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.035em;
+}
+
+.homepage-concept-v2 .container {
+    max-width: 1280px;
+}
+
+.homepage-concept-v2 .section-padding {
+    padding: 76px 0;
+}
+
+/* Header: larger logo, tighter left edge and a discreet premium overlay. */
+.homepage-concept-v2 .header {
+    padding: 16px 0;
+    background: linear-gradient(180deg, rgba(8, 24, 18, 0.70), rgba(8, 24, 18, 0));
+}
+
+.homepage-concept-v2 .header.scrolled {
+    background: rgba(16, 41, 31, 0.97);
+}
+
+.homepage-concept-v2 .header-container {
+    max-width: 1380px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.homepage-concept-v2 .logo img {
+    width: 158px;
+}
+
+.homepage-concept-v2 .nav-list {
+    gap: 25px;
+}
+
+.homepage-concept-v2 .nav-link {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+}
+
+.homepage-concept-v2 .desktop-enquire {
+    padding: 13px 22px;
+    background: #8a6736;
+}
+
+.homepage-concept-v2 .desktop-enquire:hover {
+    background: #6f522b;
+}
+
+/* Hero */
+.homepage-concept-v2 .hero {
+    min-height: 690px;
+    height: min(82vh, 780px);
+    align-items: center;
+    background: var(--home-deep);
+}
+
+.homepage-concept-v2 .hero-bg {
+    animation: none;
+    object-position: center 54%;
+    filter: saturate(0.9) contrast(1.04) brightness(0.82);
+    transform: scale(1.015);
+}
+
+.homepage-concept-v2 .hero-overlay {
+    background:
+        linear-gradient(90deg, rgba(7, 23, 17, 0.93) 0%, rgba(7, 23, 17, 0.79) 35%, rgba(7, 23, 17, 0.40) 63%, rgba(7, 23, 17, 0.18) 100%),
+        linear-gradient(0deg, rgba(7, 23, 17, 0.34), transparent 48%);
+}
+
+.homepage-concept-v2 .hero-container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.homepage-concept-v2 .hero-content {
+    max-width: 720px;
+    padding-top: 58px;
+}
+
+.homepage-concept-v2 .hero-kicker,
+.homepage-concept-v2 .home-section-eyebrow,
+.homepage-concept-v2 .home-trust-eyebrow,
+.homepage-concept-v2 .home-process-heading > span,
+.homepage-concept-v2 .home-service-pathways__intro > span {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--home-soft-sage);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.homepage-concept-v2 .hero-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 36px;
+    height: 1px;
+    margin-right: 12px;
+    vertical-align: middle;
+    background: currentColor;
+}
+
+.homepage-concept-v2 .hero-title {
+    max-width: 700px;
+    margin-bottom: 22px;
+    color: #fff;
+    font-size: clamp(58px, 6.2vw, 88px);
+    font-weight: 600;
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+    text-shadow: 0 4px 28px rgba(0, 0, 0, 0.28);
+}
+
+.homepage-concept-v2 .hero-desc {
+    max-width: 630px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.homepage-concept-v2 .hero-buttons {
+    gap: 12px;
+}
+
+.homepage-concept-v2 .hero-btn {
+    min-width: 150px;
+    padding: 14px 24px;
+}
+
+.homepage-concept-v2 .hero-btn-outline {
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.homepage-concept-v2 .hero-btn-outline:hover {
+    color: var(--home-deep);
+    background: #fff;
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+.homepage-concept-v2 .hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 26px;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.homepage-concept-v2 .hero-proof span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.homepage-concept-v2 .hero-proof span::before {
+    content: '✓';
+    color: var(--home-soft-sage);
+    font-weight: 800;
+}
+
+/* Service pathway cards directly below the hero. */
+.homepage-concept-v2 .home-service-pathways {
+    position: relative;
+    z-index: 20;
+    margin-top: -54px;
+    padding: 0 0 32px;
+}
+
+.homepage-concept-v2 .home-service-pathways__intro {
+    display: none;
+}
+
+.homepage-concept-v2 .home-service-pathways__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: #fff;
+    box-shadow: var(--home-shadow);
+}
+
+.homepage-concept-v2 .home-service-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    min-height: 112px;
+    padding: 24px 26px;
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+    transition: transform .28s ease, filter .28s ease, background-color .28s ease;
+}
+
+.homepage-concept-v2 .home-service-card:last-child {
+    border-right: 0;
+}
+
+.homepage-concept-v2 .home-service-card:hover {
+    z-index: 1;
+    transform: translateY(-4px);
+    filter: brightness(1.04);
+}
+
+.homepage-concept-v2 .home-service-card--corporate {
+    color: #fff;
+    background: var(--home-ink);
+}
+
+.homepage-concept-v2 .home-service-card--home {
+    color: var(--home-ink);
+    background: #f1f3ee;
+    border-right-color: var(--home-line);
+}
+
+.homepage-concept-v2 .home-service-card--luxury {
+    color: #fff;
+    background: var(--home-brown);
+}
+
+.homepage-concept-v2 .home-service-card__icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid currentColor;
+    opacity: 0.78;
+}
+
+.homepage-concept-v2 .home-service-card__body {
+    min-width: 0;
+}
+
+.homepage-concept-v2 .home-service-card__body strong {
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.homepage-concept-v2 .home-service-card__body small {
+    display: block;
+    color: inherit;
+    font-size: 11px;
+    line-height: 1.45;
+    opacity: 0.72;
+}
+
+.homepage-concept-v2 .home-service-card__arrow {
+    font-size: 20px;
+    transition: transform .28s ease;
+}
+
+.homepage-concept-v2 .home-service-card:hover .home-service-card__arrow {
+    transform: translateX(5px);
+}
+
+.homepage-concept-v2 .home-assurance-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 18px;
+    padding: 18px 24px;
+    color: rgba(255, 255, 255, 0.82);
+    background: var(--home-deep);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.homepage-concept-v2 .home-assurance-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 4px 22px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.homepage-concept-v2 .home-assurance-item:last-child {
+    border-right: 0;
+}
+
+.homepage-concept-v2 .home-assurance-item > span {
+    display: grid;
+    place-items: center;
+    min-width: 36px;
+    height: 36px;
+    color: var(--home-soft-sage);
+    border: 1px solid rgba(183, 200, 181, 0.45);
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.homepage-concept-v2 .home-assurance-item strong,
+.homepage-concept-v2 .home-assurance-item small {
+    display: block;
+}
+
+.homepage-concept-v2 .home-assurance-item strong {
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: .4px;
+}
+
+.homepage-concept-v2 .home-assurance-item small {
+    font-size: 10px;
+    opacity: .68;
+}
+
+/* Corporate stays: deeper professional green and tighter editorial layout. */
+.homepage-concept-v2 .business-simple {
+    padding-top: 84px;
+    color: #fff;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,.025) 25%, transparent 25%) 0 0 / 26px 26px,
+        var(--home-ink);
+    border: 0;
+}
+
+.homepage-concept-v2 .business-simple__top {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 70px;
+    align-items: center;
+    margin-bottom: 54px;
+}
+
+.homepage-concept-v2 .business-simple__intro {
+    max-width: 470px;
+    padding-top: 0;
+}
+
+.homepage-concept-v2 .home-section-eyebrow {
+    color: var(--home-soft-sage);
+}
+
+.homepage-concept-v2 .business-simple .section-title {
+    margin-bottom: 22px;
+    color: #fff !important;
+    font-size: clamp(46px, 4.2vw, 62px);
+    line-height: .98;
+}
+
+.homepage-concept-v2 .business-simple .body-text {
+    max-width: 450px;
+    color: rgba(255, 255, 255, .76) !important;
+    font-size: 15px;
+}
+
+.homepage-concept-v2 .business-simple .media-card-frame,
+.homepage-concept-v2 .business-simple__image-card {
+    max-width: 590px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.035);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, .24);
+}
+
+.homepage-concept-v2 .business-simple .media-card-frame__inner {
+    height: 470px;
+    border-radius: 1px;
+}
+
+.homepage-concept-v2 .business-simple__image-hover:hover,
+.homepage-concept-v2 .business-simple__image-hover:focus-visible {
+    transform: translateY(-4px);
+    filter: none;
+    box-shadow: 0 32px 75px rgba(0, 0, 0, .28);
+}
+
+.homepage-concept-v2 .stay-summary-float-wrapper {
+    width: min(100%, 400px);
+    margin-top: 28px;
+}
+
+.homepage-concept-v2 .stay-summary {
+    padding: 22px 24px;
+    background: rgba(10, 34, 25, .78);
+    border: 1px solid rgba(183, 200, 181, .30);
+    border-top: 3px solid var(--home-soft-sage);
+    border-radius: 1px;
+    box-shadow: 0 18px 44px rgba(0,0,0,.24);
+    animation: none;
+}
+
+.homepage-concept-v2 .home-process-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 24px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.homepage-concept-v2 .home-process-heading > span {
+    margin: 0;
+}
+
+.homepage-concept-v2 .home-process-heading h3 {
+    max-width: 560px;
+    color: #fff;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500;
+    line-height: 1.05;
+    text-align: right;
+}
+
+.homepage-concept-v2 .business-simple__steps {
+    gap: 12px;
+}
+
+.homepage-concept-v2 .business-simple__step {
+    min-height: 230px;
+    padding: 28px 20px;
+    background: var(--home-cream);
+    border: 1px solid rgba(183, 200, 181, .72);
+    border-radius: 2px;
+}
+
+.homepage-concept-v2 .business-simple__step:hover,
+.homepage-concept-v2 .business-simple__step:focus,
+.homepage-concept-v2 .business-simple__step.is-active {
+    border-color: var(--home-soft-sage);
+    box-shadow: 0 14px 38px rgba(0,0,0,.20);
+    transform: translateY(-5px);
+}
+
+.homepage-concept-v2 .step-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+}
+
+.homepage-concept-v2 .step-title {
+    font-size: 14px;
+}
+
+.homepage-concept-v2 .step-desc {
+    font-size: 12px;
+}
+
+.homepage-concept-v2 .business-simple__actions {
+    justify-content: flex-start;
+    margin-top: 0;
+}
+
+/* Trust logos: compact, clear and less empty. */
+.homepage-concept-v2 .trusted-logos {
+    padding-top: 64px;
+    padding-bottom: 40px;
+    background: var(--home-cream);
+    border: 0;
+}
+
+.homepage-concept-v2 .trusted-logos__header {
+    margin-bottom: 25px;
+}
+
+.homepage-concept-v2 .home-trust-eyebrow {
+    margin-bottom: 9px;
+    color: var(--home-ink);
+}
+
+.homepage-concept-v2 .trusted-logos__title {
+    color: var(--home-ink);
+    font-size: clamp(34px, 3.2vw, 44px);
+    font-weight: 500;
+}
+
+.homepage-concept-v2 .trusted-logos__marquee {
+    padding: 25px 0;
+    background: #fff;
+    border: 1px solid var(--home-line);
+    border-radius: 1px;
+    box-shadow: none;
+}
+
+.homepage-concept-v2 .trusted-logos__item {
+    height: 54px;
+    margin: 0 30px;
+}
+
+/* Client reviews: a modern static trust section instead of a long moving row. */
+.homepage-concept-v2 .client-reviews {
+    padding-top: 22px;
+    padding-bottom: 70px;
+    background: var(--home-cream);
+}
+
+.homepage-concept-v2 .client-reviews__header {
+    margin-bottom: 26px;
+}
+
+.homepage-concept-v2 .client-reviews__marquee {
+    overflow: visible;
+    padding: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.homepage-concept-v2 .client-reviews__track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: auto;
+    animation: none;
+}
+
+.homepage-concept-v2 .client-review-card {
+    display: flex;
+    min-width: 0;
+    min-height: 330px;
+    padding: 26px;
+    background: #fff;
+    border: 1px solid var(--home-line);
+    border-radius: 2px;
+    box-shadow: 0 12px 34px rgba(17, 42, 32, .06);
+}
+
+.homepage-concept-v2 .client-review-card:nth-child(n+4) {
+    display: none;
+}
+
+.homepage-concept-v2 .client-review-card__text {
+    font-size: 13px;
+}
+
+.homepage-concept-v2 .client-review-card .guest-review-card__stars {
+    color: #8a6736;
+}
+
+/* Home From Home: softer muted greens with a warm editorial split layout. */
+.homepage-concept-v2 .home-from-home {
+    padding-top: 84px;
+    padding-bottom: 84px;
+    background:
+        radial-gradient(circle at 100% 0, rgba(255,255,255,.58), transparent 36%),
+        var(--home-sage);
+    border: 0;
+}
+
+.homepage-concept-v2 .hfh-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 72px;
+    align-items: center;
+}
+
+.homepage-concept-v2 .hfh-content,
+.homepage-concept-v2 .hfh-media {
+    max-width: none;
+    margin: 0;
+}
+
+.homepage-concept-v2 .hfh-top-label {
+    margin-bottom: 16px;
+    color: var(--home-ink);
+}
+
+.homepage-concept-v2 .hfh-top-label span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+}
+
+.homepage-concept-v2 .hfh-title {
+    color: var(--home-brown);
+    font-size: clamp(48px, 4.5vw, 64px);
+    line-height: .98;
+}
+
+.homepage-concept-v2 .hfh-divider {
+    margin: 24px 0;
+}
+
+.homepage-concept-v2 .hfh-text-content .body-text {
+    color: rgba(65, 53, 37, .82);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.homepage-concept-v2 .hfh-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 28px 0;
+}
+
+.homepage-concept-v2 .hfh-benefit {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 2px 12px;
+    align-items: start;
+    padding: 15px;
+    text-align: left;
+    background: rgba(255,255,255,.48);
+    border: 1px solid rgba(23,59,48,.13);
+}
+
+.homepage-concept-v2 .hfh-icon-wrapper {
+    grid-row: 1 / span 2;
+    justify-content: flex-start;
+    margin: 0;
+    color: var(--home-ink);
+}
+
+.homepage-concept-v2 .hfh-benefit-title {
+    color: var(--home-brown);
+    font-size: 11px;
+}
+
+.homepage-concept-v2 .hfh-benefit-desc {
+    font-size: 10px;
+}
+
+.homepage-concept-v2 .hfh-image-card {
+    padding: 10px;
+    border: 1px solid rgba(23, 59, 48, .26);
+    border-radius: 2px;
+    background: rgba(255,255,255,.34);
+    box-shadow: var(--home-shadow);
+}
+
+.homepage-concept-v2 .hfh-image-inner {
+    height: 560px;
+    border-radius: 1px;
+}
+
+.homepage-concept-v2 .hfh-image-inner img {
+    animation: none;
+}
+
+.homepage-concept-v2 .hfh-badge {
+    right: -18px;
+    bottom: 22px;
+    width: 190px;
+    padding: 25px 22px;
+    background: rgba(245,242,237,.96);
+    border: 1px solid rgba(23,59,48,.12);
+    border-radius: 2px;
+    box-shadow: 0 16px 42px rgba(17, 42, 32, .18);
+}
+
+.homepage-concept-v2 .hfh-badge-icon {
+    margin-bottom: 8px;
+}
+
+.homepage-concept-v2 .hfh-badge-text {
+    font-size: 12px;
+}
+
+/* Old Rectory: warmer premium tone and stronger visual separation. */
+.homepage-concept-v2 .luxury-curated {
+    padding-top: 88px;
+    padding-bottom: 88px;
+    color: #fff;
+    background:
+        linear-gradient(120deg, rgba(23,59,48,.38), transparent 55%),
+        var(--home-brown);
+    border: 0;
+}
+
+.homepage-concept-v2 .luxury-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: 72px;
+    align-items: center;
+}
+
+.homepage-concept-v2 .luxury-content {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.homepage-concept-v2 .home-section-eyebrow--light {
+    color: #d7cbb9;
+}
+
+.homepage-concept-v2 .luxury-title {
+    margin-bottom: 20px;
+    color: #fff !important;
+    font-size: clamp(48px, 4.7vw, 66px);
+    line-height: .98;
+    text-align: left;
+}
+
+.homepage-concept-v2 .luxury-title .text-olive {
+    color: #d8dfd5 !important;
+}
+
+.homepage-concept-v2 .luxury-divider {
+    width: 100%;
+    max-width: 330px;
+    margin: 0 0 24px;
+    color: #d8dfd5;
+}
+
+.homepage-concept-v2 .luxury-text {
+    max-width: 550px;
+    text-align: left;
+}
+
+.homepage-concept-v2 .luxury-text .body-text {
+    color: rgba(255,255,255,.76) !important;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.homepage-concept-v2 .luxury-card-outer {
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,.28);
+    border-radius: 2px;
+    background: rgba(255,255,255,.04);
+    box-shadow: 0 26px 70px rgba(0,0,0,.25);
+}
+
+.homepage-concept-v2 .luxury-image-inner {
+    height: 560px;
+    border-radius: 1px;
+}
+
+.homepage-concept-v2 .luxury-content-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.homepage-concept-v2 .luxury-content-actions .btn {
+    background: #6d7b63;
+}
+
+.homepage-concept-v2 .luxury-content-actions .btn:hover {
+    background: #fff;
+    color: var(--home-brown);
+}
+
+/* Guest reviews: premium dark closing section and three static cards. */
+.homepage-concept-v2 .guest-reviews {
+    padding-top: 74px;
+    padding-bottom: 74px;
+    background: var(--home-deep);
+    border: 0;
+}
+
+.homepage-concept-v2 .home-trust-eyebrow--light {
+    color: var(--home-soft-sage);
+}
+
+.homepage-concept-v2 .guest-reviews__title {
+    color: #fff;
+    font-size: clamp(34px, 3.4vw, 46px);
+}
+
+.homepage-concept-v2 .guest-reviews__marquee {
+    overflow: visible;
+    padding: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.homepage-concept-v2 .guest-reviews__track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: auto;
+    animation: none;
+}
+
+.homepage-concept-v2 .guest-reviews .guest-review-card {
+    min-width: 0;
+    min-height: 310px;
+    padding: 25px;
+    background: rgba(255,255,255,.96);
+    border: 1px solid rgba(183,200,181,.34);
+    border-radius: 2px;
+    box-shadow: 0 16px 42px rgba(0,0,0,.18);
+}
+
+.homepage-concept-v2 .guest-reviews .guest-review-card:nth-child(n+4) {
+    display: none;
+}
+
+.homepage-concept-v2 .guest-reviews__footer {
+    color: var(--home-soft-sage);
+}
+
+.homepage-concept-v2 .airbnb-cta {
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.50);
+}
+
+.homepage-concept-v2 .airbnb-cta:hover {
+    color: var(--home-deep);
+    background: #fff;
+}
+
+.homepage-concept-v2 .footer,
+.homepage-concept-v2 .footer.bg-olive {
+    background: #091a13;
+    border-top: 1px solid rgba(255,255,255,.10);
+}
+
+/* Reduced motion and responsive behaviour. */
+@media (prefers-reduced-motion: reduce) {
+    .homepage-concept-v2 .cta-vibrate,
+    .homepage-concept-v2 .luxury-btn-white,
+    .homepage-concept-v2 .trusted-logos__track {
+        animation: none !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .homepage-concept-v2 .hero {
+        min-height: 650px;
+    }
+
+    .homepage-concept-v2 .home-service-pathways {
+        margin-top: -34px;
+    }
+
+    .homepage-concept-v2 .home-service-card {
+        padding: 21px 18px;
+    }
+
+    .homepage-concept-v2 .home-assurance-item {
+        padding: 4px 12px;
+    }
+
+    .homepage-concept-v2 .business-simple__top,
+    .homepage-concept-v2 .hfh-layout,
+    .homepage-concept-v2 .luxury-layout {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .homepage-concept-v2 .business-simple__intro {
+        max-width: 700px;
+    }
+
+    .homepage-concept-v2 .business-simple__image-card,
+    .homepage-concept-v2 .hfh-image-card,
+    .homepage-concept-v2 .luxury-card-outer {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .homepage-concept-v2 .client-reviews__track,
+    .homepage-concept-v2 .guest-reviews__track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .homepage-concept-v2 .client-review-card:nth-child(3),
+    .homepage-concept-v2 .guest-reviews .guest-review-card:nth-child(3) {
+        grid-column: 1 / -1;
+        max-width: 620px;
+        width: 100%;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .homepage-concept-v2 .section-padding {
+        padding: 58px 0;
+    }
+
+    .homepage-concept-v2 .header {
+        padding: 12px 0;
+        background: rgba(16, 41, 31, .96);
+    }
+
+    .homepage-concept-v2 .logo img {
+        width: 126px;
+    }
+
+    .homepage-concept-v2 .hero {
+        min-height: 650px;
+        height: auto;
+        padding: 150px 0 118px;
+    }
+
+    .homepage-concept-v2 .hero-bg {
+        object-position: 61% center;
+    }
+
+    .homepage-concept-v2 .hero-overlay {
+        background:
+            linear-gradient(90deg, rgba(7,23,17,.91), rgba(7,23,17,.54)),
+            linear-gradient(0deg, rgba(7,23,17,.42), transparent 52%);
+    }
+
+    .homepage-concept-v2 .hero-content {
+        padding-top: 0;
+    }
+
+    .homepage-concept-v2 .hero-title {
+        font-size: clamp(48px, 14vw, 66px);
+    }
+
+    .homepage-concept-v2 .hero-desc {
+        font-size: 14px;
+    }
+
+    .homepage-concept-v2 .hero-proof {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .homepage-concept-v2 .home-service-pathways {
+        margin-top: -54px;
+        padding-bottom: 20px;
+    }
+
+    .homepage-concept-v2 .home-service-pathways__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .homepage-concept-v2 .home-service-card {
+        min-height: 96px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+
+    .homepage-concept-v2 .home-service-card--home {
+        border-bottom-color: var(--home-line);
+    }
+
+    .homepage-concept-v2 .home-assurance-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 8px 18px;
+    }
+
+    .homepage-concept-v2 .home-assurance-item {
+        justify-content: flex-start;
+        padding: 14px 4px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+
+    .homepage-concept-v2 .home-assurance-item:last-child {
+        border-bottom: 0;
+    }
+
+    .homepage-concept-v2 .business-simple {
+        padding-top: 64px;
+    }
+
+    .homepage-concept-v2 .business-simple .media-card-frame__inner,
+    .homepage-concept-v2 .hfh-image-inner,
+    .homepage-concept-v2 .luxury-image-inner {
+        height: 420px;
+    }
+
+    .homepage-concept-v2 .home-process-heading {
+        display: block;
+    }
+
+    .homepage-concept-v2 .home-process-heading > span {
+        margin-bottom: 12px;
+    }
+
+    .homepage-concept-v2 .home-process-heading h3 {
+        text-align: left;
+    }
+
+    .homepage-concept-v2 .business-simple__steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: visible;
+    }
+
+    .homepage-concept-v2 .business-simple__step {
+        min-height: 0;
+        width: 100%;
+    }
+
+    .homepage-concept-v2 .client-reviews__track,
+    .homepage-concept-v2 .guest-reviews__track {
+        grid-template-columns: 1fr;
+    }
+
+    .homepage-concept-v2 .client-review-card:nth-child(3),
+    .homepage-concept-v2 .guest-reviews .guest-review-card:nth-child(3) {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .homepage-concept-v2 .hfh-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .homepage-concept-v2 .hfh-badge {
+        right: 12px;
+        bottom: 12px;
+        width: 165px;
+        padding: 18px;
+    }
+
+    .homepage-concept-v2 .luxury-content {
+        align-items: flex-start;
+    }
+
+    .homepage-concept-v2 .luxury-title,
+    .homepage-concept-v2 .luxury-text {
+        text-align: left;
+    }
+}
+
+@media (max-width: 520px) {
+    .homepage-concept-v2 .hero {
+        min-height: 610px;
+        padding-top: 132px;
+    }
+
+    .homepage-concept-v2 .hero-buttons,
+    .homepage-concept-v2 .hfh-actions,
+    .homepage-concept-v2 .luxury-content-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .homepage-concept-v2 .hero-btn,
+    .homepage-concept-v2 .hfh-actions .btn,
+    .homepage-concept-v2 .luxury-content-actions .btn {
+        width: 100%;
+    }
+
+    .homepage-concept-v2 .home-service-card {
+        grid-template-columns: auto 1fr auto;
+        padding: 18px 16px;
+    }
+
+    .homepage-concept-v2 .business-simple .section-title,
+    .homepage-concept-v2 .hfh-title,
+    .homepage-concept-v2 .luxury-title {
+        font-size: 44px;
+    }
+
+    .homepage-concept-v2 .business-simple .media-card-frame__inner,
+    .homepage-concept-v2 .hfh-image-inner,
+    .homepage-concept-v2 .luxury-image-inner {
+        height: 340px;
+    }
+
+    .homepage-concept-v2 .hfh-badge {
+        display: none;
+    }
+}
+
+
+/* ========================================================================== 
+   HOMEPAGE THEME REFRESH — JULY 2026
+   Colour-only premium treatment based on the approved green/cream concept.
+   Scoped to index.html so all existing content, section order, typography,
+   spacing, image frames, sliders and interactions remain unchanged.
+   ========================================================================== */
+.homepage-theme-refresh {
+    --olive: #60735d;
+    --forest: #173b30;
+    --cream: #f6f2eb;
+    --beige: #d9e0d7;
+    --soft-sage: #b9c8b6;
+    --terracotta: #9a7443;
+    --gold: #9a7443;
+    --grey: #6d766f;
+    --light-border: #d4ddd3;
+    --white: #ffffff;
+    --dark: #24332d;
+
+    background-color: var(--cream);
+    color: var(--dark);
+}
+
+/* Header and hero: retain the existing hero layout and image, deepen only
+   the colour treatment to match the premium trust-builder direction. */
+.homepage-theme-refresh .header {
+    background: linear-gradient(180deg, rgba(8, 29, 22, 0.64), rgba(8, 29, 22, 0));
+}
+
+.homepage-theme-refresh .header.scrolled {
+    background-color: rgba(23, 59, 48, 0.97);
+}
+
+.homepage-theme-refresh .hero-overlay {
+    background:
+        linear-gradient(90deg, rgba(10, 36, 27, 0.83) 0%, rgba(10, 36, 27, 0.58) 46%, rgba(10, 36, 27, 0.24) 100%),
+        linear-gradient(0deg, rgba(8, 27, 21, 0.20), transparent 55%);
+}
+
+.homepage-theme-refresh .btn-terracotta {
+    background-color: var(--terracotta);
+}
+
+.homepage-theme-refresh .btn-terracotta:hover,
+.homepage-theme-refresh .btn-terracotta:focus-visible {
+    background-color: #795a32;
+    box-shadow: 0 8px 24px rgba(121, 90, 50, 0.28);
+}
+
+.homepage-theme-refresh .btn-olive {
+    background-color: var(--olive);
+}
+
+.homepage-theme-refresh .btn-olive:hover,
+.homepage-theme-refresh .btn-olive:focus-visible {
+    background-color: var(--forest);
+    box-shadow: 0 8px 24px rgba(23, 59, 48, 0.24);
+}
+
+.homepage-theme-refresh .btn-olive.btn-pan-hover {
+    background-color: var(--forest);
+}
+
+.homepage-theme-refresh .btn-olive.btn-pan-hover::before {
+    background-color: var(--olive);
+}
+
+.homepage-theme-refresh .btn-terracotta.btn-pan-hover {
+    background-color: #795a32;
+}
+
+.homepage-theme-refresh .btn-terracotta.btn-pan-hover::before {
+    background-color: var(--terracotta);
+}
+
+/* Corporate stays: clean warm-ivory editorial section with professional green
+   cards and a bronze accent. No layout or content changes. */
+.homepage-theme-refresh .business-simple {
+    background:
+        radial-gradient(circle at 92% 8%, rgba(185, 200, 182, 0.22), transparent 29%),
+        var(--cream);
+    border-top: 1px solid rgba(23, 59, 48, 0.10);
+    border-bottom: 1px solid rgba(23, 59, 48, 0.12);
+}
+
+.homepage-theme-refresh .business-simple .section-title,
+.homepage-theme-refresh .business-simple .step-title {
+    color: var(--dark);
+}
+
+.homepage-theme-refresh .business-simple .text-olive,
+.homepage-theme-refresh .business-simple .step-number {
+    color: var(--forest);
+}
+
+.homepage-theme-refresh .stay-summary,
+.homepage-theme-refresh .stay-summary.bg-forest {
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 45%),
+        var(--forest);
+    border-color: rgba(217, 224, 215, 0.22);
+    border-top-color: var(--terracotta);
+    box-shadow: 0 20px 48px rgba(23, 59, 48, 0.20);
+}
+
+.homepage-theme-refresh .business-simple__step {
+    background-color: rgba(255, 255, 255, 0.88);
+    border-color: rgba(23, 59, 48, 0.14);
+    box-shadow: 0 10px 28px rgba(23, 59, 48, 0.045);
+}
+
+.homepage-theme-refresh .business-simple__step:hover,
+.homepage-theme-refresh .business-simple__step:focus,
+.homepage-theme-refresh .business-simple__step.is-active {
+    border-color: var(--terracotta);
+    box-shadow: 0 14px 34px rgba(23, 59, 48, 0.10);
+}
+
+.homepage-theme-refresh .step-icon {
+    background-color: #edf1eb;
+    color: var(--forest);
+}
+
+.homepage-theme-refresh .business-simple__step.is-active .step-icon {
+    background-color: var(--forest);
+    color: var(--white);
+}
+
+.homepage-theme-refresh .business-simple .media-card-frame,
+.homepage-theme-refresh .business-simple__image-card {
+    border-color: rgba(23, 59, 48, 0.18);
+    background-color: rgba(255, 255, 255, 0.30);
+}
+
+/* Company proof: a separate soft-sage trust band. */
+.homepage-theme-refresh .trusted-logos {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.30), transparent),
+        #e4eae2;
+    border-bottom: 1px solid rgba(23, 59, 48, 0.12);
+}
+
+.homepage-theme-refresh .trusted-logos__title {
+    color: var(--forest);
+}
+
+.homepage-theme-refresh .trusted-logos__marquee {
+    background-color: rgba(255, 255, 255, 0.90);
+    border-color: rgba(23, 59, 48, 0.13);
+    box-shadow: 0 12px 30px rgba(23, 59, 48, 0.07);
+}
+
+/* Client reviews: warm premium booking tone, while preserving the existing
+   carousel, card dimensions and wording. */
+.homepage-theme-refresh .client-reviews {
+    background:
+        radial-gradient(circle at 8% 100%, rgba(154, 116, 67, 0.075), transparent 28%),
+        #f8f5f0;
+}
+
+.homepage-theme-refresh .client-reviews__title,
+.homepage-theme-refresh .client-review-card .guest-review-card__guest h4 {
+    color: var(--forest);
+}
+
+.homepage-theme-refresh .client-reviews__label-row p,
+.homepage-theme-refresh .client-review-card .guest-review-card__stars {
+    color: var(--terracotta);
+}
+
+.homepage-theme-refresh .client-review-card {
+    background-color: rgba(255, 255, 255, 0.94);
+    border-color: rgba(23, 59, 48, 0.13);
+    box-shadow: 0 14px 36px rgba(23, 59, 48, 0.07);
+}
+
+.homepage-theme-refresh .client-review-card:hover {
+    border-color: rgba(154, 116, 67, 0.62);
+    box-shadow: 0 18px 44px rgba(23, 59, 48, 0.11);
+}
+
+.homepage-theme-refresh .client-review-card .guest-review-card__quote {
+    color: var(--soft-sage);
+}
+
+/* Home From Home: clearly distinct, calm sage section. */
+.homepage-theme-refresh .home-from-home {
+    background:
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.66), transparent 35%),
+        #dce4da;
+    border-top: 1px solid rgba(23, 59, 48, 0.11);
+    border-bottom: 1px solid rgba(23, 59, 48, 0.14);
+}
+
+.homepage-theme-refresh .hfh-top-label,
+.homepage-theme-refresh .hfh-icon-wrapper,
+.homepage-theme-refresh .hfh-text-link {
+    color: var(--forest);
+}
+
+.homepage-theme-refresh .hfh-title,
+.homepage-theme-refresh .hfh-benefit-title,
+.homepage-theme-refresh .hfh-badge-text {
+    color: var(--dark);
+}
+
+.homepage-theme-refresh .hfh-line {
+    background-color: rgba(23, 59, 48, 0.20);
+}
+
+.homepage-theme-refresh .hfh-benefit-desc {
+    color: #667168;
+}
+
+.homepage-theme-refresh .hfh-arch-stroke {
+    background-color: rgba(96, 115, 93, 0.34);
+}
+
+.homepage-theme-refresh .hfh-arch-stroke::after {
+    background-color: #dce4da;
+}
+
+.homepage-theme-refresh .hfh-image-card,
+.homepage-theme-refresh .hfh-image-card.media-card-frame {
+    border-color: rgba(23, 59, 48, 0.22);
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+.homepage-theme-refresh .hfh-badge {
+    background-color: rgba(248, 245, 239, 0.96);
+    box-shadow: 0 -10px 36px rgba(23, 59, 48, 0.08);
+}
+
+/* The Old Rectory: deep green premium section with warm bronze details. */
+.homepage-theme-refresh .luxury-curated {
+    background:
+        radial-gradient(circle at 90% 10%, rgba(154, 116, 67, 0.18), transparent 31%),
+        linear-gradient(135deg, #173b30 0%, #102c23 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.homepage-theme-refresh .luxury-title,
+.homepage-theme-refresh .luxury-text .body-text {
+    color: var(--white) !important;
+}
+
+.homepage-theme-refresh .luxury-curated .luxury-title .text-olive,
+.homepage-theme-refresh .luxury-curated .luxury-divider,
+.homepage-theme-refresh .luxury-curated .luxury-label {
+    color: #d8c49d !important;
+}
+
+.homepage-theme-refresh .luxury-curated .luxury-line {
+    background-color: rgba(216, 196, 157, 0.48);
+}
+
+.homepage-theme-refresh .luxury-card-outer {
+    border-color: rgba(255, 255, 255, 0.24);
+    background-color: rgba(255, 255, 255, 0.035);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.24);
+}
+
+.homepage-theme-refresh .luxury-overlay {
+    background: linear-gradient(to top, rgba(7, 24, 18, 0.93) 0%, rgba(7, 24, 18, 0.36) 62%, transparent 100%);
+}
+
+.homepage-theme-refresh .luxury-btn-white {
+    background-color: #f5f0e7;
+    color: var(--forest);
+}
+
+.homepage-theme-refresh .luxury-content-actions .btn-olive {
+    background-color: var(--terracotta);
+}
+
+.homepage-theme-refresh .luxury-content-actions .btn-olive:hover,
+.homepage-theme-refresh .luxury-content-actions .btn-olive:focus-visible {
+    background-color: #f5f0e7;
+    color: var(--forest);
+}
+
+.homepage-theme-refresh .luxury-content-actions .btn-olive.btn-pan-hover {
+    background-color: #795a32;
+}
+
+.homepage-theme-refresh .luxury-content-actions .btn-olive.btn-pan-hover::before {
+    background-color: var(--terracotta);
+}
+
+/* Guest reviews: return to a light, quiet close before the dark footer. */
+.homepage-theme-refresh .guest-reviews {
+    background:
+        radial-gradient(circle at 100% 100%, rgba(185, 200, 182, 0.20), transparent 30%),
+        #efe9df;
+    border-top: 1px solid rgba(23, 59, 48, 0.10);
+}
+
+.homepage-theme-refresh .guest-reviews__title,
+.homepage-theme-refresh .guest-reviews .guest-review-card__guest h4 {
+    color: var(--forest);
+}
+
+.homepage-theme-refresh .guest-reviews .guest-review-card {
+    background-color: rgba(255, 255, 255, 0.82);
+    border-color: rgba(23, 59, 48, 0.14);
+    box-shadow: 0 12px 34px rgba(23, 59, 48, 0.06);
+}
+
+.homepage-theme-refresh .guest-reviews .guest-review-card:hover {
+    border-color: rgba(154, 116, 67, 0.55);
+    box-shadow: 0 18px 44px rgba(23, 59, 48, 0.11);
+}
+
+.homepage-theme-refresh .guest-reviews .guest-review-card__stars,
+.homepage-theme-refresh .guest-reviews__footer,
+.homepage-theme-refresh .airbnb-cta {
+    color: var(--terracotta);
+}
+
+.homepage-theme-refresh .guest-reviews .guest-review-card__quote {
+    color: var(--soft-sage);
+}
+
+.homepage-theme-refresh .airbnb-cta {
+    border-color: rgba(154, 116, 67, 0.48);
+}
+
+.homepage-theme-refresh .airbnb-cta:hover,
+.homepage-theme-refresh .airbnb-cta:focus-visible {
+    color: var(--white);
+    background-color: var(--forest);
+    border-color: var(--forest);
+}
+
+.homepage-theme-refresh .footer,
+.homepage-theme-refresh .footer.bg-olive {
+    background-color: #102c23;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Keep the exact existing mobile structure. Only ensure the theme remains
+   readable at smaller breakpoints. */
+@media (max-width: 768px) {
+    .homepage-theme-refresh .header {
+        background-color: rgba(23, 59, 48, 0.96);
+    }
+
+    .homepage-theme-refresh .hero-overlay {
+        background:
+            linear-gradient(90deg, rgba(10, 36, 27, 0.84), rgba(10, 36, 27, 0.43)),
+            linear-gradient(0deg, rgba(8, 27, 21, 0.25), transparent 52%);
+    }
+}

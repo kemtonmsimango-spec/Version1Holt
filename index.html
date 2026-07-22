@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holt Accommodation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header id="header" class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.webp" alt="Holt Accommodation Logo">
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="aboutus.html" class="nav-link">About Us</a></li>
+                    <li><a href="meettheteam.html" class="nav-link">Meet The Team</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="staywithus.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Stay With Us</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="corporatestays.html" class="nav-dropdown-link">Corporate Stays</a></li>
+                            <li><a href="home4home.html" class="nav-dropdown-link">Home From Home</a></li>
+                            <li><a href="luxury-retreat.html" class="nav-dropdown-link">The Old Rectory</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="contactus.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <a href="contactus.html" class="btn btn-terracotta mobile-enquire btn-pan-hover"><span>Enquire Now</span></a>
+            </nav>
+            
+            <div class="header-right">
+                <a href="contactus.html" class="btn btn-terracotta desktop-enquire btn-pan-hover"><span>Enquire Now</span></a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg-wrapper">
+                <img src="assets/images/HeroWebApp.webp" alt="Luxury accommodation interior" class="hero-bg">
+            </div>
+            <div class="hero-overlay"></div>
+            
+            <div class="container hero-container fade-in">
+                <div class="hero-content">
+                    <h1 class="hero-title">Curated stays for<br>teams and travellers</h1>
+                    <p class="hero-desc">Tailored accommodation for workforces,<br>relocations, and luxury escapes.</p>
+                    <div class="hero-buttons">
+                        <a href="staywithus.html" class="btn btn-olive hero-btn btn-pan-hover cta-vibrate"><span>Stay With Us</span></a>
+                        <a href="aboutus.html" class="btn btn-terracotta hero-btn">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="business-simple section-padding">
+            <div class="container">
+                
+                <div class="business-simple__top">
+                    <div class="business-simple__intro js-reveal stagger-1">
+                        
+                        <h2 class="section-title text-dark">Business accommodation<br><span class="italic-serif text-olive">made simple</span></h2>
+                        <p class="body-text text-dark">Smarter, reliable stays for working teams - helping your projects run smoothly from day one. </p>
+                        <div class="stay-summary-float-wrapper stay-summary-inline-wrapper js-reveal stagger-3">
+                            <div class="stay-summary bg-forest">
+                                <h4 class="summary-title text-white">STAY SUMMARY</h4>
+                                <div class="summary-rows">
+                                    <div class="summary-row">
+                                        <span class="summary-label">Location:</span>
+                                        <span class="summary-value">Manchester City Centre</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">Dates:</span>
+                                        <span class="summary-value">12 May to 23 May 2026</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">Guests:</span>
+                                        <span class="summary-value">6 team members</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">Property type:</span>
+                                        <span class="summary-value">2 bed apartments</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">Support:</span>
+                                        <span class="summary-value">24/7 guest support</span>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                    ALL HANDLED
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-simple__media js-reveal stagger-2">
+                       <!-- Consistent media frame: matches the Old Rectory/Luxury Stays image frame -->
+                       <div class="media-card-frame business-simple__image-card business-simple__image-hover">
+                           <div class="media-card-frame__inner business-simple__image-slider" aria-label="Business accommodation image gallery">
+                               <img
+                                   src="assets/images/slidebusi v1.webp"
+                                   alt="Business accommodation made simple"
+                                   class="business-simple__image-slide is-active business-simple__image">
+                               <img
+                                   src="assets/images/Rename v1.webp"
+                                   onerror="this.onerror=null;this.src='assets/images/businessmade.png';"
+                                   alt="Business accommodation alternative view"
+                                   class="business-simple__image-slide">
+                           </div>
+                       </div>
+                        
+
+                    </div>
+                </div>
+
+                <div class="business-simple__bottom">
+                    <div class="business-simple__steps js-reveal stagger-4">
+                        
+                        <div class="business-simple__step is-active" tabindex="0">
+                            <div class="step-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="step-content">
+                                <span class="step-number">Step 1</span>
+                                <h3 class="step-title">Tell Us What You Need</h3>
+                                <p class="step-desc">Where, When and What you’re looking for</p>
+                            </div>
+                        </div>
+
+                        <div class="business-simple__step" tabindex="0">
+                            <div class="step-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="step-content">
+                                <span class="step-number">Step 2</span>
+                                <h3 class="step-title">We Do the Searching</h3>
+                                <p class="step-desc">We source suitable accommodation tailored to your
+needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="business-simple__step" tabindex="0">
+                            <div class="step-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                    <path d="M9 14l2 2 4-4"></path>
+                                </svg>
+                            </div>
+                            <div class="step-content">
+                                <span class="step-number">Step 3</span>
+                                <h3 class="step-title">You Choose the Best Fit</h3>
+                                <p class="step-desc">We send carefully selected options for you to review
+and approve</p>
+                            </div>
+                        </div>
+
+                        <div class="business-simple__step" tabindex="0">
+                            <div class="step-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <div class="step-content">
+                                <span class="step-number">Step 4</span>
+                                <h3 class="step-title">We Arrange the Rest</h3>
+                                <p class="step-desc">From booking to check-out, We handle the
+arrangements so your stay is smooth from start to finish</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="business-simple__actions js-reveal stagger-5">
+                        <a href="corporatestays.html" class="btn btn-olive btn-pan-hover"><span>View More</span></a>
+                        <a href="contactus.html" class="btn btn-terracotta">Contact Us</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="trusted-logos trusted-logos--with-client-reviews section-padding js-reveal" aria-labelledby="trusted-logos-title">
+            <div class="container">
+                <div class="trusted-logos__header">
+                    <h2 id="trusted-logos-title" class="trusted-logos__title font-serif">
+                        Companies We’re
+Proud to Support
+                    </h2>
+                </div>
+
+                <div class="trusted-logos__marquee" aria-label="Trusted teams and company logos">
+                    <div class="trusted-logos__track">
+                        <div class="trusted-logos__item">
+                            <img src="assets/partners/partner1.jpg" alt="Team or company logo 1">
+                        </div>
+                        <div class="trusted-logos__item">
+                            <img src="assets/partners/partner2.webp" alt="Team or company logo 2">
+                        </div>
+                        <div class="trusted-logos__item">
+                            <img src="assets/partners/partner3.png" alt="Team or company logo 3">
+                        </div>
+                        <div class="trusted-logos__item">
+                            <img src="assets/partners/partner4.png" alt="Team or company logo 4">
+                        </div>
+                        <div class="trusted-logos__item">
+                            <img src="assets/partners/partner5.webp" alt="Team or company logo 5">
+                        </div>
+                        <div class="trusted-logos__item">
+                            <img src="assets/partners/partner6.jpg" alt="Team or company logo 6">
+                        </div>
+                        <div class="trusted-logos__item">
+                            <img src="assets/partners/partner7.png" alt="Team or company logo 7">
+                        </div>
+
+                        <!-- Duplicate set for a seamless infinite loop (hidden from assistive tech) -->
+                        <div class="trusted-logos__item trusted-logos__item--clone" aria-hidden="true">
+                            <img src="assets/partners/partner1.jpg" alt="">
+                        </div>
+                        <div class="trusted-logos__item trusted-logos__item--clone" aria-hidden="true">
+                            <img src="assets/partners/partner2.webp" alt="">
+                        </div>
+                        <div class="trusted-logos__item trusted-logos__item--clone" aria-hidden="true">
+                            <img src="assets/partners/partner3.png" alt="">
+                        </div>
+                        <div class="trusted-logos__item trusted-logos__item--clone" aria-hidden="true">
+                            <img src="assets/partners/partner4.png" alt="">
+                        </div>
+                        <div class="trusted-logos__item trusted-logos__item--clone" aria-hidden="true">
+                            <img src="assets/partners/partner5.webp" alt="">
+                        </div>
+                        <div class="trusted-logos__item trusted-logos__item--clone" aria-hidden="true">
+                            <img src="assets/partners/partner6.jpg" alt="">
+                        </div>
+                        <div class="trusted-logos__item trusted-logos__item--clone" aria-hidden="true">
+                            <img src="assets/partners/partner7.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="client-reviews section-padding js-reveal" aria-labelledby="client-reviews-title">
+            <div class="container">
+                <div class="guest-reviews__header client-reviews__header">
+                    <div class="guest-reviews__label-row client-reviews__label-row">
+                        <span></span>
+                        <p>Client Reviews</p>
+                        <span></span>
+                    </div>
+
+                    <h2 id="client-reviews-title" class="guest-reviews__title client-reviews__title font-serif">
+                        What Our Clients and Hosts Say
+                    </h2>
+                </div>
+
+                <div class="guest-reviews__marquee client-reviews__marquee" aria-label="Client reviews carousel">
+                    <div class="guest-reviews__track client-reviews__track">
+
+                <article class="guest-review-card client-review-card">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        We have been dealing with Louise, Lisa and Nicole for a number of large bookings at our property. They are always a pleasure to deal with, great to communicate with and very organised and efficient with finalising multiple bookings. We look forward to doing business with you in the future. Thank you all Ladies for your business, and support of our Business.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Monica Twomey</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card client-review-card">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        Lou, Lisa and the rest of the Holt Accommodation team have been there for us at every step of the way when we have had accommodation issues for our remote teams. Their help and solutions to our last minute issues have made our projects a great deal easier to handle knowing we can trust them to deliver. A great partnership and long may it continue. Thanks for everything.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Mickey Eastmond</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card client-review-card">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        Over the past few months, we've had guests from Holt staying with us in various holiday homes. We (LekkerNaarZee) are normally quite selective about who we accept as guests, but this has been going very well. They are tidy and easy-going, and reliable when it comes to communication. Communication with the office is smooth and prompt, and payments are received quickly. As far as we're concerned, we'd be happy to work with them again.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Niek Hietberg</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card client-review-card">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        Holt Accomodation are a supplier we have used for many years. Louise and her team are very professional and will go above and beyond. The support we receive from them is invaluable with after hours support and assisting us with multiple properties across the UK. I would highly recommend Holt Accommodation to anyone.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Kerry de Pinchart</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card client-review-card">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        I use Holt Accommodation nearly every week. For myself and my team of 6. The staff at Holt are brilliant and professional. Always sorting accommodation for us and our needs. The accommodation they chose is always of a high quality and close to our site where ever that might be and always coming in on budget. I can't recommend Holt Accommodation highly enough.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Neil Gilbert</h4>
+                        </div>
+                    </div>
+                </article>
+
+                        <!-- Duplicate cards for seamless infinite loop -->
+                <article class="guest-review-card client-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        We have been dealing with Louise, Lisa and Nicole for a number of large bookings at our property. They are always a pleasure to deal with, great to communicate with and very organised and efficient with finalising multiple bookings. We look forward to doing business with you in the future. Thank you all Ladies for your business, and support of our Business.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Monica Twomey</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card client-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        Lou, Lisa and the rest of the Holt Accommodation team have been there for us at every step of the way when we have had accommodation issues for our remote teams. Their help and solutions to our last minute issues have made our projects a great deal easier to handle knowing we can trust them to deliver. A great partnership and long may it continue. Thanks for everything.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Mickey Eastmond</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card client-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        Over the past few months, we've had guests from Holt staying with us in various holiday homes. We (LekkerNaarZee) are normally quite selective about who we accept as guests, but this has been going very well. They are tidy and easy-going, and reliable when it comes to communication. Communication with the office is smooth and prompt, and payments are received quickly. As far as we're concerned, we'd be happy to work with them again.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Niek Hietberg</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card client-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        Holt Accomodation are a supplier we have used for many years. Louise and her team are very professional and will go above and beyond. The support we receive from them is invaluable with after hours support and assisting us with multiple properties across the UK. I would highly recommend Holt Accommodation to anyone.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Kerry de Pinchart</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card client-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text client-review-card__text">
+                        I use Holt Accommodation nearly every week. For myself and my team of 6. The staff at Holt are brilliant and professional. Always sorting accommodation for us and our needs. The accommodation they chose is always of a high quality and close to our site where ever that might be and always coming in on budget. I can't recommend Holt Accommodation highly enough.
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest client-review-card__client">
+                        <div>
+                            <h4>Neil Gilbert</h4>
+                        </div>
+                    </div>
+                </article>
+                    </div>
+                </div>
+
+                <div class="guest-reviews__footer client-reviews__footer" aria-hidden="true">
+                    <span class="guest-reviews__footer-line"></span>
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                        <path d="M12 2v20"></path>
+                        <path d="M12 12c-2.4 0-4.5-2.1-4.5-4.5"></path>
+                        <path d="M12 12c2.4 0 4.5 2.1 4.5 4.5"></path>
+                    </svg>
+                    <span class="guest-reviews__footer-line"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="home-from-home" class="home-from-home section-padding js-reveal">
+            <div class="container hfh-layout">
+                <div class="hfh-content">
+                    <div class="hfh-top-label">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <path d="M9 22V12h6v10"></path>
+                            <path d="M15 8c2 0 3-1 3-3-2 0-3 1-3 3z" stroke="var(--terracotta)"></path>
+                        </svg>
+                        
+                    </div>
+
+                    <h2 class="hfh-title font-serif">Temporary stays,<br><span class="italic-serif" style="color: var(--forest);">total peace of mind</span></h2>
+                    
+                    <div class="hfh-divider">
+                        <span class="hfh-line"></span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--olive)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                            <path d="M12 2v20"></path>
+                            <path d="M12 12A4.5 4.5 0 0 0 7.5 7.5"></path>
+                            <path d="M12 12a4.5 4.5 0 0 1 4.5 4.5"></path>
+                        </svg>
+                        <span class="hfh-line"></span>
+                    </div>
+
+                    <div class="hfh-text-content">
+                        <p class="body-text">When life doesn’t go as planned, finding somewhere safe, <strong>comfortable and welcoming shouldn’t
+add to the stress.</strong></p>
+                        <p class="body-text">Our Home From Home service helps individuals and families who need <strong>temporary accommodation at short notice.</strong></p>
+                        <p class="body-text">Whether you&#39;re relocating, facing an unexpected
+housing situation, or simply between homes, <strong>we help you find a place that feels secure,
+supportive, and genuinely like home.</strong></p>
+                    </div>
+
+                    <div class="hfh-benefits">
+                        <div class="hfh-benefit">
+                            <div class="hfh-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 11 12 14 22 4"></polyline>
+                                </svg>
+                            </div>
+                            <h4 class="hfh-benefit-title">Carefully selected homes</h4>
+                            <p class="hfh-benefit-desc">Quality places you can trust.</p>
+                        </div>
+                        <div class="hfh-benefit">
+                            <div class="hfh-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+                                </svg>
+                            </div>
+                            <h4 class="hfh-benefit-title">Ready to move in</h4>
+                            <p class="hfh-benefit-desc">Fully equipped for a seamless start.</p>
+                        </div>
+                        <div class="hfh-benefit">
+                            <div class="hfh-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    <path d="M14 19c0-1.5-1.5-3-3-3s-3 1.5-3 3"></path>
+                                    <circle cx="11" cy="13" r="2"></circle>
+                                </svg>
+                            </div>
+                            <h4 class="hfh-benefit-title">Support when you need it</h4>
+                            <p class="hfh-benefit-desc">We're here for you every step of the way.</p>
+                        </div>
+                        <div class="hfh-benefit">
+                            <div class="hfh-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="hfh-benefit-title">Comfort that feels like home</h4>
+                            <p class="hfh-benefit-desc">Because where you stay matters.</p>
+                        </div>
+                    </div>
+
+                    <div class="hfh-actions">
+                        <a href="contactus.html" class="btn btn-olive">
+                            CONTACT US 
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="home4home.html" class="hfh-text-link">
+                            Learn how we can help
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hfh-media">
+                    <!-- Consistent media frame: matches the Old Rectory/Luxury Stays image frame -->
+                    <div class="media-card-frame hfh-image-card">
+                        <div class="media-card-frame__inner hfh-image-inner">
+                            <img src="assets/images/temphome.webp" alt="Home From Home comfortable interior" onerror="this.src='assets/images/idea 2.png'">
+                        </div>
+                        <div class="hfh-badge">
+                            <svg class="hfh-badge-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--olive)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                                <path d="M12 2v20"></path>
+                                <path d="M12 12A4.5 4.5 0 0 0 7.5 7.5"></path>
+                                <path d="M12 12a4.5 4.5 0 0 1 4.5 4.5"></path>
+                            </svg>
+                            <p class="hfh-badge-text">
+                                More than a place<br>to stay &mdash;<br>
+                                <span class="italic-serif text-terracotta">a place<br>to feel at home.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="luxury-curated" class="luxury-curated section-padding js-reveal">
+            <div class="container luxury-layout">
+                <div class="luxury-media">
+                    <div class="luxury-card-outer">
+                        <div class="luxury-image-inner">
+                            <div class="luxury-image-slider" aria-label="Luxury property image gallery">
+                                <img src="assets/images/GCG-15 v1.webp" alt="Luxury property exterior with pool" class="luxury-slide is-active" onerror="this.src='assets/images/idea 2.png'">
+                                <img src="assets/images/GCG-36 v1.webp" alt="Elegant luxury property interior" class="luxury-slide" onerror="this.src='assets/images/idea 2.png'">
+                                <img src="assets/images/Pool V1.webp" alt="Curated luxury retreat space" class="luxury-slide" onerror="this.src='assets/images/idea 2.png'">
+                            </div>
+                            <div class="luxury-overlay">
+                                <span class="luxury-label">LUXURY PROPERTY</span>
+                                <div class="luxury-divider-small">
+                                    <span class="luxury-line-small"></span>
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                                        <path d="M12 2v20"></path>
+                                        <path d="M12 12A4.5 4.5 0 0 0 7.5 7.5"></path>
+                                        <path d="M12 12a4.5 4.5 0 0 1 4.5 4.5"></path>
+                                    </svg>
+                                    <span class="luxury-line-small"></span>
+                                </div>
+                                <a href="https://www.airbnb.co.uk/rooms/844637034900788827" target="_blank" rel="noopener noreferrer" class="btn luxury-btn-white">VIEW PROPERTY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="luxury-content text-center">
+                    <h2 class="luxury-title font-serif">Luxury Stays at  <br><span class="italic-serif text-olive">The Old Rectory</span></h2>
+                    
+                    <div class="luxury-divider">
+                        <span class="luxury-line"></span>
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                            <path d="M12 2v20"></path>
+                            <path d="M12 12A4.5 4.5 0 0 0 7.5 7.5"></path>
+                            <path d="M12 12a4.5 4.5 0 0 1 4.5 4.5"></path>
+                        </svg>
+                        <span class="luxury-line"></span>
+                    </div>
+
+                    <div class="luxury-text">
+    <p class="body-text">The Old Rectory is our one-of-a-kind holiday home.<br class="desktop-only">It offers a chance to step into a luxury
+countryside retreat for a while.</p>
+
+    <p class="body-text">Designed for group stays, family get-togethers, and special
+occasions,<br class="desktop-only">this property is something a little different from our day-to-day.</p>
+
+    <p class="body-text">Every detail has been considered to help you feel relaxed,<br class="desktop-only">cared for, and at home from the moment you arrive.<br class="desktop-only">More than just a getaway, this is a stay designed to be remembered.</p>
+</div>
+
+                    <!-- Old Rectory CTA group: existing Contact Us + new luxury retreat link -->
+                    <div class="luxury-content-actions luxury-contact-btn">
+                        <a href="contactus.html" class="btn btn-olive btn-pan-hover"><span>CONTACT US &rarr;</span></a>
+                        <a href="luxury-retreat.html" class="btn btn-olive btn-pan-hover"><span>VIEW LUXURY RETREAT &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="guest-reviews section-padding js-reveal" aria-labelledby="guest-reviews-title">
+    <div class="container">
+        <div class="guest-reviews__header" style="text-align: center;">
+            <div class="guest-reviews__label-row" style="display: flex; align-items: center; justify-content: center;">
+                
+            </div>
+
+            <h2 id="guest-reviews-title" class="guest-reviews__title font-serif">
+                What Our Guests Have to Say
+            </h2>
+        </div>
+
+        <div class="guest-reviews__marquee" aria-label="Guest reviews carousel" style="margin-left: auto; margin-right: auto;">
+            <div class="guest-reviews__track">
+
+                <article class="guest-review-card">
+                    <div class="guest-review-card__stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text">
+                        My group and I had a fantastic get away. The weather meant that we could really enjoy the pool and garden. The house was very spacious and gave us plenty of room for different activities!
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest">
+                        <img src="assets/images/reviews/GuestReview1.webp" alt="Emily R." class="guest-review-card__avatar">
+                        <div>
+                            <h4> Bethan.</h4>
+                            <p>May 2026</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card">
+                    <div class="guest-review-card__stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text">
+                       I can’t say enough nice things about the Old Rectory and our overall experience from booking, to the stay itself. 
+The communication beforehand was spot on and the personal recommendations we received were so helpful. 
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest">
+                        <img src="assets/images/reviews/GuestReview2.webp" alt="James T." class="guest-review-card__avatar">
+                        <div>
+                            <h4>Laura.</h4>
+                            <p>April 2026</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card">
+                    <div class="guest-review-card__stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text">
+                        The Old Rectory was a wonderful place for us to celebrate a 60th birthday with the whole family. The house was incredibly well stocked, with everything we could have hoped for and more.
+Your communication and generosity throughout was outstanding, and we’re already looking at dates to return next year!
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest">
+                        <img src="assets/images/reviews/GuestReview3.webp" alt="Sophie L." class="guest-review-card__avatar">
+                        <div>
+                            <h4>Chris.</h4>
+                            <p>March 2026</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card">
+                    <div class="guest-review-card__stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text">
+                        The house is beautiful and we felt right at home straight away…. There is so much space and yet it feels so homely.
+There was plenty of things to do at the property and even toys for the little one!
+The property grounds are lovely and there is everything there you could possibly need.
+We didn’t want to leave!
+Thank you for a wonderful stay!
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest">
+                        <img src="assets/images/reviews/GuestReview4.webp" alt="David M." class="guest-review-card__avatar">
+                        <div>
+                            <h4>Amy.</h4>
+                            <p>March 2024</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Duplicate cards for seamless infinite loop -->
+<article class="guest-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text">
+                        My group and I had a fantastic get away. The weather meant that we could really enjoy the pool and garden. The house was very spacious and gave us plenty of room for different activities!
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest">
+                        <img src="assets/images/reviews/GuestReview1.webp" alt="Emily R." class="guest-review-card__avatar">
+                        <div>
+                            <h4> Bethan.</h4>
+                            <p>May 2026</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text">
+                       I can’t say enough nice things about the Old Rectory and our overall experience from booking, to the stay itself. 
+The communication beforehand was spot on and the personal recommendations we received were so helpful. 
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest">
+                        <img src="assets/images/reviews/GuestReview2.webp" alt="James T." class="guest-review-card__avatar">
+                        <div>
+                            <h4>Laura.</h4>
+                            <p>April 2026</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text">
+                        The Old Rectory was a wonderful place for us to celebrate a 60th birthday with the whole family. The house was incredibly well stocked, with everything we could have hoped for and more.
+Your communication and generosity throughout was outstanding, and we’re already looking at dates to return next year!
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest">
+                        <img src="assets/images/reviews/GuestReview3.webp" alt="Sophie L." class="guest-review-card__avatar">
+                        <div>
+                            <h4>Chris.</h4>
+                            <p>March 2026</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="guest-review-card" aria-hidden="true">
+                    <div class="guest-review-card__stars">★★★★★</div>
+                    <div class="guest-review-card__quote">“</div>
+                    <p class="guest-review-card__text">
+                        The house is beautiful and we felt right at home straight away…. There is so much space and yet it feels so homely.
+There was plenty of things to do at the property and even toys for the little one!
+The property grounds are lovely and there is everything there you could possibly need.
+We didn’t want to leave!
+Thank you for a wonderful stay!
+                    </p>
+                    <div class="guest-review-card__divider"></div>
+                    <div class="guest-review-card__guest">
+                        <img src="assets/images/reviews/GuestReview4.webp" alt="David M." class="guest-review-card__avatar">
+                        <div>
+                            <h4>Amy.</h4>
+                            <p>March 2026</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <div class="guest-reviews__footer" style="display: flex; align-items: center; justify-content: center;">
+            <span class="guest-reviews__footer-line"></span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 3v18"></path>
+                <path d="M12 12c-2.4 0-4.5-2.1-4.5-4.5"></path>
+                <path d="M12 12c2.4 0 4.5 2.1 4.5 4.5"></path>
+            </svg>
+            <span class="guest-reviews__footer-line"></span>
+        </div>
+
+        <!-- Airbnb call-to-action beneath the guest testimonial cards -->
+        <div class="airbnb-cta-wrapper">
+            <a href="https://www.airbnb.co.uk/rooms/844637034900788827" target="_blank" rel="noopener noreferrer" class="airbnb-cta">
+                View on Airbnb
+            </a>
+        </div>
+
+       
+    </div>
+</section>    
+    
+    
+    
+    
+    
+    </main>
+
+    <footer id="contact" class="footer bg-olive text-white js-reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.png" alt="Holt Accommodation Logo" class="footer-logo">
+                    <p class="footer-desc">Curated stays for teams and travellers. Workstays, relocations and luxury retreats, managed with care.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/holtaccommodationsolutionsltd/" target="_blank" rel="noopener noreferrer" aria-label="Holt Accommodation on Facebook"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a>
+                        <a href="https://www.instagram.com/holtaccommodationsolutionsltd/" target="_blank" rel="noopener noreferrer" aria-label="Holt Accommodation on Instagram"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="meettheteam.html">Meet The Team</a></li>
+                        <li><a href="staywithus.html">Stay With Us</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>+44 7944 406 722</li>
+                        <li>admin@holtaccommodation.co.uk</li>
+                        <li>Mon to Fri, 9am to 5pm</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col" id="enquire">
+                    <h4 class="footer-heading">Enquire Now</h4>
+                    <p class="footer-text">Let us create the perfect stay for your team or your getaway.</p>
+                    <a href="contactus.html" class="btn btn-terracotta btn-full footer-enquire-btn btn-pan-hover"><span>Send An Enquiry</span></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Holt Accommodation. All rights reserved.</p>
+                <p class="footer-legal">
+                    <!-- TODO: link to real Privacy / Terms / Cookies pages once created -->
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms &amp; Conditions</a> |
+                    <a href="#">Cookies</a>
+                </p>
+                <p>Designed by Atomic Build Digital</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
